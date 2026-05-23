@@ -1,4 +1,4 @@
-# 📡 Myay Gyi AI: Live Earthquake Monitor & Aftershock Predictor
+# Myay Gyi AI: Live Earthquake Monitor & Aftershock Predictor 📡
 
 [![Spotify](https://img.shields.io/badge/Dev%20Soundtrack-Kids%20(The%20Midnight)-1DB954?logo=spotify&logoColor=white)](https://open.spotify.com/track/5DDDOmwf5A73gx139EfoOU?si=ec769bf36364473f)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
@@ -14,9 +14,9 @@
 
 Real-time **seismic intelligence platform** built with **Streamlit** to monitor live earthquakes, explore trends, and estimate aftershock probability both in **Myanmar** and globally using live data from the **USGS Earthquake Hazards Program** and machine learning techniques.
 
-## 🖥️ Demo App
+## Demo App
 <div align="center">
-  <a href="https://myay-gyi-ai.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit App"></a>
+  <a href="https://myay-gyi-ai.streamlit.app/"><img src="https://img.shields.io/badge/Open%20in%20Streamlit-FF4B4B?logo=streamlit&logoColor=white" alt="Streamlit App"></a>
   <a href="https://colab.research.google.com/drive/1E1JfFw_pyPYZSytyZeXl2LJlsGPqt9MS?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Streamlit App"></a>
 </div>
 
@@ -25,7 +25,7 @@ Real-time **seismic intelligence platform** built with **Streamlit** to monitor 
 > [!CAUTION]
 > Disclaimer: This tool is for educational and analytical purposes only. It is not an official emergency warning system. Always follow local authorities and seismic agencies during emergencies.
 
-## 🧠 What is Myay Gyi AI?
+## What is Myay Gyi AI?
 
 > **Myay Gyi (မြေကြီး)** means **Earth** in Burmese. 
 
@@ -37,7 +37,7 @@ Designed for:
 - Journalists  
 - Emergency planners  
 
-## 🚀 Core Features
+## Core Features
 
 ### 1. Live Earthquake Dashboard 📡
 
@@ -74,13 +74,13 @@ Estimate the probability of a **M4.0+ aftershock within 72 hours** after a trigg
 - Live recent earthquakes
 - Manual custom scenario testing
 
-## 🏛️ System Architecture
+## System Architecture
 <img src="assets/architecture-diagram.drawio.png" alt="System Architecture" width="60%">
 
-## 🔃 System Workflow
+## System Workflow
 <img src="assets/workflow-diagram.drawio.png" alt="System Workflow" width="55%">
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer | Tools |
 |------|------|
@@ -92,7 +92,7 @@ Estimate the probability of a **M4.0+ aftershock within 72 hours** after a trigg
 | API Source | USGS |
 | Deployment | Streamlit Cloud |
 
-## 📂 Project Structure
+## Project Structure
 ```
 myay-gyi-ai/
     ├── .devcontainer/                           
@@ -110,7 +110,7 @@ myay-gyi-ai/
     └── requirements.txt                         # Dependencies
 ```
 
-## ⚙️ Installation & Local Setup
+## Installation & Local Setup
 
 ### 1. Clone Repo
 ```sh
@@ -146,7 +146,7 @@ Open in your browser:
 http://localhost:8501
 ```
 
-## 🎯 Why Matters
+## Why Matters
 
 Most earthquake dashboards only display dots on a map.
 
@@ -158,7 +158,7 @@ Myay Gyi AI goes further:
 - Predictive risk modelling 
 - Explainable AI 
 
-## 📌 Future Roadmap
+## Future Roadmap
 - SMS / Telegram alerts
 - Fault-line live overlays
 - Mobile app version
@@ -166,7 +166,7 @@ Myay Gyi AI goes further:
 - Deep learning seismic forecasting
 - Crowd-sourced felt reports
 
-## 🧭 References
+## References
 
 - [**Streamlit Community Tutorial**](https://discuss.streamlit.io/t/building-a-dashboard-in-python-using-streamlit/60621)
 - [**DataProfessor — Population Dashboard**](https://github.com/dataprofessor/population-dashboard)
@@ -174,7 +174,7 @@ Myay Gyi AI goes further:
 - [**Streamlit Documentation**](https://docs.streamlit.io/)
 - [**SHAP Explainability Docs**](https://shap.readthedocs.io/en/latest/)
 
-## 🍥 Support
+## Support
 If you have any bug reports or local setup difficulties, please reach out via **[Matrix](https://matrix.to/#/@htutmyatoo:matrix.org)**.
 
 <a href="https://ko-fi.com/J3J21UINNT" target="_blank">
