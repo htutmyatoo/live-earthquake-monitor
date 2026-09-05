@@ -152,7 +152,7 @@ with st.sidebar:
     st.markdown("*Real-Time Seismic Monitor*")
 
     st.markdown('<div class="section-label">Region</div>', unsafe_allow_html=True)
-    region = st.radio("", ["Myanmar 🇲🇲", "Global 🌍"], horizontal=True, label_visibility="collapsed")
+    region = st.radio("Select Region", ["Myanmar 🇲🇲", "Global 🌍"], horizontal=True, label_visibility="collapsed")
 
     st.markdown('<div class="section-label">Filters</div>', unsafe_allow_html=True)
     min_mag   = st.slider("Min Magnitude", 0.0, 8.0, 4.5, 0.1)
@@ -164,7 +164,7 @@ with st.sidebar:
     )
 
     st.markdown('<div class="section-label">Visualisation</div>', unsafe_allow_html=True)
-    view_mode    = st.radio("", ["Epicenter Map", "Activity Timeline", "Depth Analysis"], label_visibility="collapsed")
+    view_mode    = st.radio("Select Visualization", ["Epicenter Map", "Activity Timeline", "Depth Analysis"], label_visibility="collapsed")
     color_theme  = st.selectbox("Map Color Scale", ["inferno", "plasma", "magma", "viridis", "cividis"])
 
     st.divider()
@@ -253,14 +253,14 @@ def make_map(df, theme, myanmar):
     """
     center = {"lat": 19.0, "lon": 96.0} if myanmar else {"lat": 20, "lon": 0}
     zoom   = 4 if myanmar else 1
-    fig = px.scatter_mapbox(
+    fig = px.scatter_map(
         df, lat="latitude", lon="longitude",
         color="magnitude", size=df["magnitude"].clip(lower=1), size_max=18,
         hover_name="place",
         hover_data={"magnitude": ":.1f", "depth": ":.0f", "time": True,
                     "latitude": False, "longitude": False},
         color_continuous_scale=theme, zoom=zoom, center=center,
-        mapbox_style="carto-darkmatter", template="plotly_dark"
+        map_style="carto-darkmatter", template="plotly_dark"
     )
     fig.update_layout(
         height=450, margin=dict(l=0, r=0, t=0, b=0),
@@ -402,18 +402,18 @@ with col_c:
         else:
             if view_mode == "Epicenter Map":
                 tab1.header(f"Epicenter Map — {title_region}")
-                tab1.plotly_chart(make_map(df_f, color_theme, is_myanmar), use_container_width=True)
+                tab1.plotly_chart(make_map(df_f, color_theme, is_myanmar), width="stretch")
 
             elif view_mode == "Activity Timeline":
                 tab1.header(f"Daily Activity — {title_region}")
-                tab1.plotly_chart(make_timeline(df_f), use_container_width=True)
+                tab1.plotly_chart(make_timeline(df_f), width="stretch")
 
             else:
                 tab1.header(f"Depth vs Magnitude — {title_region}")
-                tab1.plotly_chart(make_depth_scatter(df_f), use_container_width=True)
+                tab1.plotly_chart(make_depth_scatter(df_f), width="stretch")
 
             tab2.header("Magnitude Distribution")
-            tab2.plotly_chart(make_mag_histogram(df_f), use_container_width=True)
+            tab2.plotly_chart(make_mag_histogram(df_f), width="stretch")
 
             tab3.header("Recent Events")
             table = df_f.sort_values("time", ascending=False).head(15).copy()
@@ -423,7 +423,7 @@ with col_c:
             table["Depth (km)"] = table["depth"].round(0).astype(int)
             table["Type"]       = table["depth_category"].astype(str)
             tab3.dataframe(table[["Time","Location","Mag","Depth (km)","Type"]],
-                        hide_index=True, use_container_width=True)
+                        hide_index=True, width="stretch")
 
             # Feedback Form
             with st.popover("💬 Give Feedback for Dashboard", width="stretch"):
